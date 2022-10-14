@@ -35,7 +35,7 @@ internal class UserEnter
     static private void SearchParams()
     {
         Produto produto = new(0, "", 0, 0, false, DateTime.Now, "");
-        produto = produto.SearchProduct(InputStreamer.InputEditCodeStream());
+        produto = produto.TakeOneFromList(InputStreamer.InputEditCodeStream());
         InputStreamer.InputPrintOneProductStream(produto);
     }
 

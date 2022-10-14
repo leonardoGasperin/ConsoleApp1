@@ -40,7 +40,12 @@
             this.date_registry = produto.date_registry;
         }
 
-        public Produto SearchProduct(int code)
+        public Produto TakeOneFromList(int code)
+        {
+            return SearchProduct(code);
+        }
+
+        private Produto SearchProduct(int code)
         {
             foreach (Produto produto in produtos)
             {

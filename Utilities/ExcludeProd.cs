@@ -6,7 +6,7 @@ internal class ExcludeProd
     static public void Exclude()
     {
         Produto produto = new(0, "", 0, 0, false, DateTime.Now, "");
-        produto = produto.SearchProduct(InputStreamer.InputEditCodeStream());
+        produto = produto.TakeOneFromList(InputStreamer.InputEditCodeStream());
         if (produto != null)
             produto.Exclude(produto.Code);
         else
