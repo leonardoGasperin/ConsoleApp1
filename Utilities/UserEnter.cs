@@ -46,9 +46,10 @@ internal class UserEnter
         produto.PrintAllProducts();
     }
 
-    private static void Exit(){
+    private static void Exit()
+    {
         Console.WriteLine("Deseja Sair? 0-Não 1-Sim");
-        if((int)InputValidation.CheckInteger(Console.ReadLine()) == 0)
+        if ((int)InputValidation.CheckInteger(Console.ReadLine()) == 0)
             ConsoleInput();
     }
 }
