@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Repos\\Exercicios trello\\ConsoleApp1\\ConsoleApp1.csproj",
-      "projectName": "ConsoleApp1",
-      "projectPath": "E:\\Repos\\Exercicios trello\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "E:\\Repos\\Exercicios trello\\ConsoleApp2\\ConsoleApp2.csproj",
+      "projectName": "ConsoleApp2",
+      "projectPath": "E:\\Repos\\Exercicios trello\\ConsoleApp2\\ConsoleApp2.csproj",
       "packagesPath": "C:\\Users\\Morgam\\.nuget\\packages\\",
-      "outputPath": "E:\\Repos\\Exercicios trello\\ConsoleApp1\\obj\\",
+      "outputPath": "E:\\Repos\\Exercicios trello\\ConsoleApp2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Morgam\\AppData\\Roaming\\NuGet\\NuGet.Config",

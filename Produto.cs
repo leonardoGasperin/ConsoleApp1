@@ -1,28 +1,42 @@
-﻿namespace ConsoleApp1
+﻿namespace ConsoleApp2
 {
     internal class Produto
     {
         static private List<Produto> produtos = new List<Produto>();
-        private int code;
-        private string name;
+        private int code = -1;
+        private string name =  " ";
         private decimal price_brought;
         private decimal price_sell;
         private bool active;
-        private DateTime? date_registry;
-        private string desc;
+        private DateTime date_registry;
+        private string desc = " ";
 
-        public Produto(int code, string name, decimal price_brought, decimal price_sell,bool active, DateTime date_registry, string desc)
+        public int Code { get{ return this.code; } 
+                          set{ this.code = value; } }
+        public string Name { get { return IsNullString(this.name); } 
+                             set { this.name =  IsNullString(value); } }
+        public decimal Price_brought { get{ return this.price_brought; } 
+                          set{ this.price_brought = value; } }
+        public decimal Price_sell { get{ return this.price_sell; } 
+                          set{ this.price_sell = value; } }
+        public bool Active { get{ return this.active; } 
+                          set{ this.active = value; } }
+        public DateTime? Date_registry { get{ return this.date_registry; } 
+                          set{ this.date_registry = new DateTime(1970, 01, 01); } }   
+        public string Desc { get { return IsNullString(this.desc); }
+                             set { this.desc =  IsNullString(value); }  }
+
+        public string IsNullString(string value)
         {
-            this.code = code;
-            this.name = name;
-            this.desc = desc;
-            this.price_brought = price_brought;
-            this.price_sell = price_sell;
-            this.active = active;
-            this.date_registry = date_registry;
+            if(value == null || value == "")
+            {
+                return "";
+            }
+            else
+            {
+                return value;
+            }
         }
-
-        public int Code { get { return this.code;  } }
 
         public void InsertProduct(Produto produto)
         {
@@ -42,19 +56,20 @@
 
         public Produto TakeOneFromList(int code)
         {
-            return SearchProduct(code);
+            int ProdutoIndx = SearchProduct(code);
+            return ProdutoIndx != -1 ? produtos[ProdutoIndx] : new();
         }
 
-        private Produto SearchProduct(int code)
+        private int SearchProduct(int code)
         {
             foreach (Produto produto in produtos)
             {
                 if (produto.code == code)
                 {
-                    return produto;
+                    return produtos.IndexOf(produto);
                 }
             }
-            return null;
+            return -1;
         }
 
         public void Exclude(int code)

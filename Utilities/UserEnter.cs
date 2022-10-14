@@ -1,5 +1,5 @@
-﻿using ConsoleApp1;
-using ConsoleApp1.Utilities;
+﻿using ConsoleApp2;
+using ConsoleApp2.Utilities;
 
 internal class UserEnter
 {
@@ -34,14 +34,15 @@ internal class UserEnter
 
     static private void SearchParams()
     {
-        Produto produto = new(0, "", 0, 0, false, DateTime.Now, "");
+        Produto produto = new();
         produto = produto.TakeOneFromList(InputStreamer.InputEditCodeStream());
         InputStreamer.InputPrintOneProductStream(produto);
+        ConsoleInput();
     }
 
     private static void PrintAllProducts()
     {
-        Produto produto = new(0, "", 0, 0, false, DateTime.Now, "");
+        Produto produto = new();
         produto.PrintAllProducts();
     }
 

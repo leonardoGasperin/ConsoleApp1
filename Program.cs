@@ -1,6 +1,6 @@
 ﻿using static UserEnter;
 
-namespace ConsoleApp1
+namespace ConsoleApp2
 {
     internal class Program
     {

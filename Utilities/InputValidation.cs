@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1.Utilities
+﻿namespace ConsoleApp2.Utilities
 {
     internal class InputValidation
     {

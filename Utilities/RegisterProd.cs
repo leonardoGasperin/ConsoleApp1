@@ -1,5 +1,5 @@
-﻿using ConsoleApp1;
-using ConsoleApp1.Utilities;
+﻿using ConsoleApp2;
+using ConsoleApp2.Utilities;
 
 internal class RegisterProd
 {
@@ -7,5 +7,6 @@ internal class RegisterProd
     {
         Produto produto = InputStreamer.InputProductStream();
         produto.InsertProduct(produto);
+        UserEnter.ConsoleInput();
     }
 }

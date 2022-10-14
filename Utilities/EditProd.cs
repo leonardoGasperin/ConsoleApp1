@@ -1,23 +1,29 @@
-﻿using ConsoleApp1;
-using ConsoleApp1.Utilities;
+﻿using ConsoleApp2;
+using ConsoleApp2.Utilities;
 
 internal class EditProd
 {
     public static void Editing()
     {
-        Produto produto = new(0, "", 0, 0, false, DateTime.Now, "");
+        Produto produto = new();
         produto = produto.TakeOneFromList(InputStreamer.InputEditCodeStream());
         ConfirmEdition(produto);
+        UserEnter.ConsoleInput();
     }
 
     private static void ConfirmEdition(Produto produto)
     {
-        if (produto != null)
+        if (produto.Code != -1)
             produto.Change(InputStreamer.InputProductStream());
         else
         {
-            Console.WriteLine("Produto invalido");
-            Editing();
+            NoProductFound();
         }
+    }
+
+    public static void NoProductFound()
+    {
+        Console.WriteLine("Produto invalido");
+        Editing();
     }
 }
