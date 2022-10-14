@@ -1,6 +1,4 @@
-﻿using ConsoleApp1;
-
-namespace ConsoleApp1.Utilities
+﻿namespace ConsoleApp1.Utilities
 {
     internal class InputValidation
     {
