@@ -25,7 +25,7 @@
             Console.WriteLine("0-Inativo 1-Ativo(padrão 0)");
             isActive = InputValidation.ValidatingBoolInput(Console.ReadLine());
 
-            return new Produto(code, name, priceBrought, priceSell, isActive, new DateTime(1970, 01, 01), desc);
+            return new Produto(code, name, priceBrought, priceSell, isActive, new DateTime(1970, 01, 01), desc == null ? "" : desc);
         }
 
         public static int InputEditCodeStream()

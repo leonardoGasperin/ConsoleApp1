@@ -20,7 +20,7 @@
 
         public static string ValidatingStringInput(string? inputValue, int size)
         {
-            while (inputValue.Length < size)
+            while (inputValue == null || inputValue.Length < size)
             {
                 Console.WriteLine("Digite um valor valido: ");
                 inputValue = Console.ReadLine();
