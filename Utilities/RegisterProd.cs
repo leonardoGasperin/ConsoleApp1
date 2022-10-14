@@ -7,5 +7,6 @@ internal class RegisterProd
     {
         Produto produto = InputStreamer.InputProductStream();
         produto.InsertProduct(produto);
+        UserEnter.ConsoleInput();
     }
 }

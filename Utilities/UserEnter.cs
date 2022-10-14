@@ -34,20 +34,22 @@ internal class UserEnter
 
     static private void SearchParams()
     {
-        Produto produto = new(0, "", 0, 0, false, DateTime.Now, "");
+        Produto produto = new();
         produto = produto.TakeOneFromList(InputStreamer.InputEditCodeStream());
         InputStreamer.InputPrintOneProductStream(produto);
+        ConsoleInput();
     }
 
     private static void PrintAllProducts()
     {
-        Produto produto = new(0, "", 0, 0, false, DateTime.Now, "");
+        Produto produto = new();
         produto.PrintAllProducts();
     }
 
-    private static void Exit(){
+    private static void Exit()
+    {
         Console.WriteLine("Deseja Sair? 0-Não 1-Sim");
-        if((int)InputValidation.CheckInteger(Console.ReadLine()) == 0)
+        if ((int)InputValidation.CheckInteger(Console.ReadLine()) == 0)
             ConsoleInput();
     }
 }

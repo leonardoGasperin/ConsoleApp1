@@ -4,28 +4,24 @@
     {
         public static Produto InputProductStream()
         {
-            int code;
-            string? name;
-            string? desc;
-            decimal priceBrought;
-            decimal priceSell;
-            bool isActive;
             int minStringLength = 3;
 
-            Console.WriteLine("Entre com o código do Produto:");
-            code = ((int)InputValidation.CheckInteger(Console.ReadLine()));
-            Console.WriteLine("Nome do produto: ");
-            name = InputValidation.ValidatingStringInput(Console.ReadLine(), minStringLength);
-            Console.WriteLine("Entre com a descrição do produto(opcional): ");
-            desc = Console.ReadLine();
-            Console.WriteLine("Digite o custo de compra:");
-            priceBrought = InputValidation.CheckInteger(Console.ReadLine());
-            Console.WriteLine("Digite o custo de venda:");
-            priceSell = InputValidation.CheckInteger(Console.ReadLine());
-            Console.WriteLine("0-Inativo 1-Ativo(padrão 0)");
-            isActive = InputValidation.ValidatingBoolInput(Console.ReadLine());
+            Produto produto = new();
 
-            return new Produto(code, name, priceBrought, priceSell, isActive, new DateTime(1970, 01, 01), desc == null ? "" : desc);
+            Console.WriteLine("Entre com o código do Produto:");
+            produto.Code = ((int)InputValidation.CheckInteger(Console.ReadLine()));
+            Console.WriteLine("Nome do produto: ");
+            produto.Name = InputValidation.ValidatingStringInput(Console.ReadLine(), minStringLength);
+            Console.WriteLine("Entre com a descrição do produto(opcional): ");
+            produto.Desc = InputValidation.ValidatingStringInput(Console.ReadLine(), 0);
+            Console.WriteLine("Digite o custo de compra:");
+            produto.Price_brought = InputValidation.CheckInteger(Console.ReadLine());
+            Console.WriteLine("Digite o custo de venda:");
+            produto.Price_sell = InputValidation.CheckInteger(Console.ReadLine());
+            Console.WriteLine("0-Inativo 1-Ativo(padrão 0)");
+            produto.Active = InputValidation.ValidatingBoolInput(Console.ReadLine());
+
+            return produto;
         }
 
         public static int InputEditCodeStream()
