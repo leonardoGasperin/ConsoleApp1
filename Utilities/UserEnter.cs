@@ -27,9 +27,9 @@ internal class UserEnter
                 ConsoleInput();
                 break;
             default:
+                Exit();
                 break;
         }
-        ConsoleInput();
     }
 
     static private void SearchParams()
@@ -43,5 +43,11 @@ internal class UserEnter
     {
         Produto produto = new(0, "", 0, 0, false, DateTime.Now, "");
         produto.PrintAllProducts();
+    }
+
+    private static void Exit(){
+        Console.WriteLine("Deseja Sair? 0-Não 1-Sim");
+        if((int)InputValidation.CheckInteger(Console.ReadLine()) == 0)
+            ConsoleInput();
     }
 }
