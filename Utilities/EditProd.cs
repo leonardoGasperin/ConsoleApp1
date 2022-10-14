@@ -13,7 +13,7 @@ internal class EditProd
     private static void ConfirmEdition(Produto produto)
     {
         if (produto != null)
-            produto.Change(InputStreamer.InputStream());
+            produto.Change(InputStreamer.InputProductStream());
         else
         {
             Console.WriteLine("Produto invalido");

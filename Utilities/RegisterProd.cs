@@ -5,7 +5,7 @@ internal class RegisterProd
 {
     public static void InsertProduct(bool isEditing = false)
     {
-        Produto produto = InputStreamer.InputStream();
+        Produto produto = InputStreamer.InputProductStream();
         produto.InsertProduct(produto);
     }
 }

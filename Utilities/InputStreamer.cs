@@ -2,7 +2,7 @@
 {
     internal class InputStreamer
     {
-        public static Produto InputStream()
+        public static Produto InputProductStream()
         {
             int code;
             string? name;
