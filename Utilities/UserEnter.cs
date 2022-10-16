@@ -49,7 +49,7 @@ internal class UserEnter
     private static void Exit()
     {
         Console.WriteLine("Deseja Sair? 0-Não 1-Sim");
-        if ((int)InputValidation.CheckInteger(Console.ReadLine()) == 0)
+        if ((int)InputValidation.CheckIsNumber(Console.ReadLine()) == 0)
             ConsoleInput();
     }
 }

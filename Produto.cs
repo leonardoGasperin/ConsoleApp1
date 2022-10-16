@@ -1,13 +1,13 @@
 ﻿namespace ConsoleApp2
 {
-    internal class Produto
+    public class Produto
     {
         static private List<Produto> produtos = new List<Produto>();
         private int code = -1;
         private string name = " ";
         private decimal price_brought;
         private decimal price_sell;
-        private bool active;
+        private bool active = true;
         private DateTime date_registry;
         private string desc = " ";
 

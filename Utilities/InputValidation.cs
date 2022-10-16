@@ -1,40 +1,41 @@
-﻿namespace ConsoleApp2.Utilities
+﻿using System.Drawing;
+
+namespace ConsoleApp2.Utilities
 {
-    internal class InputValidation
+    static class InputValidation
     {
-        public static decimal CheckInteger(string? inputValue)
+        public static decimal CheckIsNumber(string? inputValue)
         {
-            decimal outValue;
-            if (!decimal.TryParse(inputValue, out outValue) || outValue < 0)
-                ValidatingNumericalInput(outValue);
-
-            return outValue;
+            inputValue = ValidatingInput(inputValue);
+            if (decimal.TryParse(inputValue, out decimal result))
+                return result;
+            else
+               return CheckIsNumber(ValidateFail());
         }
 
-        public static decimal ValidatingNumericalInput(decimal num)
+        public static string ValidatingInput(this string? inputValue)
         {
-            Console.WriteLine("Digite um valor valido(somente Inteiros)");
-            num = CheckInteger(Console.ReadLine());
-            return num;
+            if (String.IsNullOrWhiteSpace(inputValue))
+                inputValue = ValidateFail();
+            return inputValue;
         }
 
-        public static string ValidatingStringInput(string? inputValue, int size)
+        public static string ValidateFail()
         {
-            while (inputValue == null || inputValue.Length < size)
-            {
-                Console.WriteLine("Digite um valor valido: ");
-                inputValue = Console.ReadLine();
-            }
+            Console.WriteLine("Digite um valor valido:");
+            return ValidatingInput(Console.ReadLine());
+        }
+
+        public static string AcceptNullOrWhiteSpace(string? inputValue)
+        {
+            if (String.IsNullOrWhiteSpace(inputValue))
+                return "";
             return inputValue;
         }
 
         public static bool ValidatingBoolInput(string? inputValue)
         {
-            int.TryParse(inputValue, out int isTrue);
-            if (isTrue == 1)
-                return true;
-            else
-                return false;
+            return bool.TryParse(inputValue, out bool isTrue) ? isTrue : false; 
         }
     }
 }
